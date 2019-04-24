@@ -26,11 +26,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       format.html { render :show }
-<<<<<<< HEAD
       format.json { render json: @product }
-=======
       format.json { render json: @product}
->>>>>>> 47931a72ea6c98c53005cbc193327d9c4bd586a0
+
     end
   end
 
