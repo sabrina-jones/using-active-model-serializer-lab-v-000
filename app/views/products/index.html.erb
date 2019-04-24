@@ -8,6 +8,7 @@
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
+<<<<<<< HEAD
 $(function() {
   $(".js-more").on("click", function() {
     var id = $(this).data("id");
@@ -23,9 +24,19 @@ $(function() {
       var orderList = "";
       orders.forEach(function(order) {
         orderList += '<li class="js-order" data-id="' + order["id"] + '">' + order["id"] + ' - ' + order["created_at"] + '</li>';
+=======
+  $(function() {
+    $(".js-more").on("click", function() {
+      var id = $(this).data("id");
+      $.get("/products/" + id + ".json", function(data) {
+        var descriptionText = "<p>" + data["description"] + "</p>";
+        var inventory = data["inventory"] > 0? "Available" : "Sold Out";
+        var orderInfo = "<p>" + data["orders"][0]["id"] + "</p>" + "<p>" + data["orders"][0]["created_at"] + "</p>";
+        descriptionText += "<p>" + inventory + "</p>" + orderInfo;
+        $("#product-" + id).html(descriptionText)
+>>>>>>> 0365add5db989b49b307420750e9a8456053c13c
       });
       $("#product-" + id + "-orders").html(orderList);
     });
   });
-});
 </script>

@@ -50,8 +50,4 @@ group :development do
   gem 'spring'
 end
 
-<<<<<<< HEAD
 gem 'active_model_serializers'
-=======
-gem 'active_model_serializers'
->>>>>>> 47931a72ea6c98c53005cbc193327d9c4bd586a0
